@@ -46,6 +46,7 @@ public class CameraActivity extends AppCompatActivity implements SurfaceHolder.C
 
     private SurfaceView mCameraPreview;
     private FrameLayout mCameraPreviewContainer;
+    private ImageButton mBtnTakePhoto;
 
     private ImageHelper.PhotoOrientation mCurrentOrientation;
 
@@ -133,10 +134,12 @@ public class CameraActivity extends AppCompatActivity implements SurfaceHolder.C
         mCameraPreviewContainer = (FrameLayout) findViewById(R.id.camera_preview_container);
         mCameraPreviewContainer.addView(mCameraPreview);
 
-        ImageButton btnTakePhoto = (ImageButton) findViewById(R.id.btn_take_photo);
-        btnTakePhoto.setOnClickListener(new View.OnClickListener() {
+        mBtnTakePhoto = (ImageButton) findViewById(R.id.btn_take_photo);
+        mBtnTakePhoto.setEnabled(true);
+        mBtnTakePhoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mBtnTakePhoto.setEnabled(false);
                 // empty ShutterCallback is needed to provide system sound when shutter button is clicked
                 mCamera.takePicture(new Camera.ShutterCallback() {
                     @Override
@@ -146,7 +149,7 @@ public class CameraActivity extends AppCompatActivity implements SurfaceHolder.C
             }
         });
         // SurfaceView was added dynamically and overlapped this view
-        btnTakePhoto.bringToFront();
+        mBtnTakePhoto.bringToFront();
 
         ImageButton btnGotoGallery = (ImageButton) findViewById(R.id.btn_goto_gallery);
         btnGotoGallery.setOnClickListener(new View.OnClickListener() {
