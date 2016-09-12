@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container_edit_name_dialog"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@color/colorBackground">
+
+    <TextView
+        android:id="@+id/view_edit_name_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/edit_name_dialog_title"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20dp"/>
+
+    <View
+        android:id="@+id/view_edit_name_header_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/view_edit_name_title"
+        android:layout_marginTop="5dp"
+        android:background="@color/colorPrimary"/>
+
+    <EditText
+        android:id="@+id/et_edit_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view_edit_name_header_divider"
+        android:layout_margin="10dp"
+        android:lines="1"
+        android:maxLength="64"
+        android:inputType="text"
+        android:imeOptions="actionDone"
+        android:textColor="@color/colorAccent"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_edit_name"
+        android:weightSum="10">
+
+        <Button
+            android:id="@+id/btn_edit_name_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:background="@android:color/transparent"
+            android:text="@android:string/cancel"
+            android:textColor="@color/colorPrimary"/>
+
+        <Button
+            android:id="@+id/btn_edit_name_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:background="@android:color/transparent"
+            android:text="@android:string/ok"
+            android:textColor="@color/colorPrimary"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

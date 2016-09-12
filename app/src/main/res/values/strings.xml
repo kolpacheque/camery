@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Cammery</string>
+    <string name="taken_photo_title">Taken Photo</string>
+    <string name="edit_name_dialog_title">Specify photo name</string>
+    <string name="error_empty_name">Name cannot be empty</string>
+    <string name="success_valid_name">OK</string>
+</resources>
